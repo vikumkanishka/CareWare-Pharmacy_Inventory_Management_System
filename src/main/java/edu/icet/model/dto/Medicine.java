@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 public class Medicine {
-     private Integer medicineId;
+     private Integer Id;
      private String name;
      private String brand;
      private String category;
