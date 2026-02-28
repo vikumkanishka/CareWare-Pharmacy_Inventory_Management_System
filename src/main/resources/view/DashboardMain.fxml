@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-
 <AnchorPane prefHeight="689.0" prefWidth="1095.0" style="-fx-background-color: #f7f7f7;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.dashboard.DashboardFormController">
    <children>
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#002f33" height="678.0" layoutX="10.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="204.0" />
@@ -17,13 +16,13 @@
       </ImageView>
       <Button fx:id="btnDashboard" layoutX="35.0" layoutY="194.0" mnemonicParsing="false" onAction="#btnDashboardOnAction" prefHeight="33.0" prefWidth="152.0" text="DashBoard" />
       <Button fx:id="btnOrders" layoutX="35.0" layoutY="359.0" mnemonicParsing="false" onAction="#btnOrdersOnAction" prefHeight="33.0" prefWidth="152.0" text="Orders" />
-      <Button fx:id="btnCustomers" layoutX="35.0" layoutY="305.0" mnemonicParsing="false" onAction="#btnCustomersOnAction" prefHeight="33.0" prefWidth="152.0" text="Sales" />
+      <Button fx:id="btnCustomers" layoutX="35.0" layoutY="305.0" mnemonicParsing="false" onAction="#btnSalesOnAction" prefHeight="33.0" prefWidth="152.0" text="Sales" />
       <Button fx:id="btnMedicine" layoutX="35.0" layoutY="251.0" mnemonicParsing="false" onAction="#btnMedicineOnAction" prefHeight="33.0" prefWidth="152.0" text="Medicine" />
       <Button fx:id="btnSupplier" layoutX="36.0" layoutY="415.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="33.0" prefWidth="152.0" text="Suppliers" />
       <Button fx:id="btnCustomer" layoutX="36.0" layoutY="470.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="33.0" prefWidth="152.0" text="Customers" />
       <Button layoutX="35.0" layoutY="587.0" mnemonicParsing="false" onAction="#btnHelpOnAction" prefHeight="33.0" prefWidth="152.0" text="Help &amp; Support" />
       <Button layoutX="68.0" layoutY="633.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="34.0" prefWidth="86.0" text="Logout" />
       <Button fx:id="btnPOS" layoutX="36.0" layoutY="142.0" mnemonicParsing="false" onAction="#btnPOSOnAction" prefHeight="33.0" prefWidth="152.0" text="POS" />
-      <AnchorPane layoutX="229.0" layoutY="5.0" prefHeight="678.0" prefWidth="859.0" />
+      <AnchorPane fx:id="dashRoot" layoutX="223.0" layoutY="5.0" prefHeight="678.0" prefWidth="900.0" />
    </children>
 </AnchorPane>
