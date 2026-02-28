@@ -59,8 +59,13 @@ public class MedicineFormController {
     private TextField txtSearch;
 
     @FXML
-    void btnAddNewMedicineOnAction(ActionEvent event) {
+    public void btnAddNewMedicineOnAction(ActionEvent event) {
 
     }
 
+    public void btnUpdateMedicineOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnDeleteMedicineOnAction(ActionEvent actionEvent) {
+    }
 }
