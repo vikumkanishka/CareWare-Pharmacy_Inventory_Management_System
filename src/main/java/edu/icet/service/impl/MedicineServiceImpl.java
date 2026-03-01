@@ -13,11 +13,11 @@ import java.util.Date;
 
 public class MedicineServiceImpl implements MedicineService {
 
-    MedicineRepository medicineRepository = new MedicineRepositoryImpl();
+    MedicineRepository repository = new MedicineRepositoryImpl();
 
     @Override
     public void addMedicine(Integer id, String name, String brand, String category, Date expiryDate, Integer quantity, Double unitPrice, Double buyingPrice, Integer supplierId, String batchNumber, Integer reorderLevel, Date createdAt) {
-
+        repository.addMedicine(id, name, brand, category, expiryDate, quantity, unitPrice, buyingPrice, supplierId, batchNumber, reorderLevel, createdAt);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class MedicineServiceImpl implements MedicineService {
         ObservableList<Medicine> medicines = FXCollections.observableArrayList();
 
         try {
-            ResultSet resultSet = medicineRepository.getAllMedicines();
+            ResultSet resultSet = repository.getAllMedicines();
             while (resultSet.next()){
                 medicines.add(new Medicine(
                         resultSet.getInt("medicine_id"),

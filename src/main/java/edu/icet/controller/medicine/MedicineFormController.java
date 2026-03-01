@@ -6,20 +6,32 @@ import edu.icet.service.impl.MedicineServiceImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
 public class MedicineFormController implements Initializable {
 
     MedicineService medicineService = new MedicineServiceImpl();
+
+    public TextField txtId;
+    public Button btnUpdateMedicine;
+    public Button btnDeleteMedicine;
+    public TextField txtName;
+    public TextField txtBrand;
+    public TextField txtCategory;
+    public TextField txtSupplierId;
+    public TextField txtUnitPrice;
+    public DatePicker dateExpiryDate;
+    public TextField txtBuyingPrice;
+    public TextField txtReOrderLevel;
+    public TextField txtBatchNo;
+    public DatePicker dateCreatedAt;
+    public TextField txtQuantity;
 
     @FXML
     private Button btnAddNewMedicine;
@@ -71,7 +83,22 @@ public class MedicineFormController implements Initializable {
 
     @FXML
     public void btnAddNewMedicineOnAction(ActionEvent event) {
+        Integer id = Integer.parseInt(txtId.getText());
+        String name = txtName.getText();
+        String brand = txtBrand.getText();
+        String category = txtCategory.getText();
+        Integer supplierId = Integer.parseInt(txtSupplierId.getText());
+        Integer quantity = Integer.parseInt(txtQuantity.getText());
+        Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        Double buyingPrice = Double.parseDouble(txtBuyingPrice.getText());
+        Integer reOrderLevel = Integer.parseInt(txtReOrderLevel.getText());
+        String batchNo = txtBatchNo.getText();
+        Date expiryDate = java.sql.Date.valueOf(dateExpiryDate.getValue());
+        Date createdAt =java.sql.Date.valueOf(dateCreatedAt.getValue());
 
+        medicineService.addMedicine(id, name, brand, category, expiryDate, quantity, unitPrice, buyingPrice, supplierId, batchNo, reOrderLevel, createdAt);
+
+        loadAllMedicines();
     }
 
     public void btnUpdateMedicineOnAction(ActionEvent actionEvent) {
