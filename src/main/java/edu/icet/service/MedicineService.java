@@ -1,6 +1,7 @@
 package edu.icet.service;
 
 import edu.icet.model.dto.Medicine;
+import javafx.collections.ObservableList;
 
 import java.util.Date;
 import java.util.List;
@@ -15,5 +16,5 @@ public interface MedicineService {
 
     Medicine searchMedicineById(Integer id);
 
-    List<Medicine> getAllMedicines();
+    ObservableList<Medicine> getAllMedicines();
 }

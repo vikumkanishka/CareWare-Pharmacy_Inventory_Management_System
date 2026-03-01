@@ -3,8 +3,9 @@ package edu.icet.repository.impl;
 import edu.icet.model.dto.Medicine;
 import edu.icet.repository.MedicineRepository;
 
+import java.sql.*;
 import java.util.Date;
-import java.util.List;
+
 
 public class MedicineRepositoryImpl implements MedicineRepository {
     @Override
@@ -28,7 +29,16 @@ public class MedicineRepositoryImpl implements MedicineRepository {
     }
 
     @Override
-    public List<Medicine> getAllMedicines() {
-        return List.of();
+    public ResultSet getAllMedicines() throws SQLException {
+
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/careware", "root", "200004602360");
+
+            System.out.println(connection);
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM medicine");
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            return resultSet;
+
     }
 }

@@ -2,6 +2,8 @@ package edu.icet.repository;
 
 import edu.icet.model.dto.Medicine;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
@@ -15,5 +17,5 @@ public interface MedicineRepository {
 
     Medicine searchMedicineById(Integer id);
 
-    List<Medicine> getAllMedicines();
+    ResultSet getAllMedicines() throws SQLException;
 }
