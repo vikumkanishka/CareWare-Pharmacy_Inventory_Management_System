@@ -2,7 +2,6 @@ package edu.icet.repository.impl;
 
 import edu.icet.model.dto.Medicine;
 import edu.icet.repository.MedicineRepository;
-
 import java.sql.*;
 import java.util.Date;
 
@@ -35,7 +34,27 @@ public class MedicineRepositoryImpl implements MedicineRepository {
 
     @Override
     public void updateMedicine(Integer id, String name, String brand, String category, Date expiryDate, Integer quantity, Double unitPrice, Double buyingPrice, Integer supplierId, String batchNumber, Integer reorderLevel, Date createdAt) {
+        try {
 
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/careware", "root", "200004602360");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE medicine SET name=?, brand=?, category=?, expiry_date=?, quantity=?, unit_price=?, buying_price=?, supplier_id=?, batch_number=?, reorder_level=?, created_at=? WHERE medicine_id=?");
+            preparedStatement.setObject(1, name);
+            preparedStatement.setObject(2, brand);
+            preparedStatement.setObject(3, category);
+            preparedStatement.setObject(4, expiryDate);
+            preparedStatement.setObject(5, quantity);
+            preparedStatement.setObject(6, unitPrice);
+            preparedStatement.setObject(7, buyingPrice);
+            preparedStatement.setObject(8, supplierId);
+            preparedStatement.setObject(9, batchNumber);
+            preparedStatement.setObject(10, reorderLevel);
+            preparedStatement.setObject(11, createdAt);
+            preparedStatement.setObject(12, id);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -53,12 +72,10 @@ public class MedicineRepositoryImpl implements MedicineRepository {
 
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/careware", "root", "200004602360");
 
-            System.out.println(connection);
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM medicine");
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
             return resultSet;
-
     }
 }

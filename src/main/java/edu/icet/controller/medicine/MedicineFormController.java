@@ -83,6 +83,7 @@ public class MedicineFormController implements Initializable {
 
     @FXML
     public void btnAddNewMedicineOnAction(ActionEvent event) {
+
         Integer id = Integer.parseInt(txtId.getText());
         String name = txtName.getText();
         String brand = txtBrand.getText();
@@ -102,6 +103,23 @@ public class MedicineFormController implements Initializable {
     }
 
     public void btnUpdateMedicineOnAction(ActionEvent actionEvent) {
+
+        Integer id = Integer.parseInt(txtId.getText());
+        String name = txtName.getText();
+        String brand = txtBrand.getText();
+        String category = txtCategory.getText();
+        Integer supplierId = Integer.parseInt(txtSupplierId.getText());
+        Integer quantity = Integer.parseInt(txtQuantity.getText());
+        Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        Double buyingPrice = Double.parseDouble(txtBuyingPrice.getText());
+        Integer reOrderLevel = Integer.parseInt(txtReOrderLevel.getText());
+        String batchNo = txtBatchNo.getText();
+        Date expiryDate = java.sql.Date.valueOf(dateExpiryDate.getValue());
+        Date createdAt =java.sql.Date.valueOf(dateCreatedAt.getValue());
+
+        medicineService.updateMedicine(id, name, brand, category, expiryDate, quantity, unitPrice, buyingPrice, supplierId, batchNo, reOrderLevel, createdAt);
+
+        loadAllMedicines();
     }
 
     public void btnDeleteMedicineOnAction(ActionEvent actionEvent) {

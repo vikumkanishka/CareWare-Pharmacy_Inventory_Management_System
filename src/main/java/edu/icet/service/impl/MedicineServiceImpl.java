@@ -22,7 +22,7 @@ public class MedicineServiceImpl implements MedicineService {
 
     @Override
     public void updateMedicine(Integer id, String name, String brand, String category, Date expiryDate, Integer quantity, Double unitPrice, Double buyingPrice, Integer supplierId, String batchNumber, Integer reorderLevel, Date createdAt) {
-
+        repository.updateMedicine(id, name, brand, category, expiryDate, quantity, unitPrice, buyingPrice, supplierId, batchNumber, reorderLevel, createdAt);
     }
 
     @Override
