@@ -16,7 +16,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.supplier.SupplierFromController">
    <children>
       <Rectangle arcHeight="30.0" arcWidth="30.0" height="45.0" layoutX="6.0" layoutY="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="888.0">
@@ -116,7 +115,7 @@
       </Rectangle>
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#e4ebf2" height="339.0" layoutX="6.0" layoutY="163.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="888.0" />
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="46.0" layoutX="14.0" layoutY="169.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="874.0" />
-      <Button fx:id="btnAddNewMedicine" layoutX="742.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnAddNewMedicineOnAction" prefHeight="30.0" prefWidth="138.0" text="Add New Supplier" />
+      <Button fx:id="btnAddNewSupplier" layoutX="742.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnAddNewSupplierOnAction" prefHeight="30.0" prefWidth="138.0" text="Add New Supplier" />
       <Label layoutX="23.0" layoutY="177.0" prefHeight="26.0" prefWidth="132.0" text="Supplier List">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -139,8 +138,8 @@
          </columns>
       </TableView>
       <JFXTextField fx:id="txtSearch" layoutX="514.0" layoutY="14.0" prefHeight="26.0" prefWidth="138.0" promptText="Search" />
-      <Button fx:id="btnUpdateMedicine" layoutX="743.0" layoutY="575.0" mnemonicParsing="false" onAction="#btnUpdateMedicineOnAction" prefHeight="30.0" prefWidth="138.0" text="Update Supplier" />
-      <Button fx:id="btnDeleteMedicine" layoutX="743.0" layoutY="622.0" mnemonicParsing="false" onAction="#btnDeleteMedicineOnAction" prefHeight="30.0" prefWidth="138.0" text="Delete Supplier" />
+      <Button fx:id="btnUpdateSupplier" layoutX="743.0" layoutY="575.0" mnemonicParsing="false" onAction="#btnUpdateSupplierOnAction" prefHeight="30.0" prefWidth="138.0" text="Update Supplier" />
+      <Button fx:id="btnDeleteSupplier" layoutX="743.0" layoutY="622.0" mnemonicParsing="false" onAction="#btnDeleteSupplierOnAction" prefHeight="30.0" prefWidth="138.0" text="Delete Supplier" />
       <TextField fx:id="txtId" layoutX="23.0" layoutY="528.0" promptText="ID" />
       <TextField fx:id="txtName" layoutX="184.0" layoutY="528.0" promptText="Name" />
       <TextField fx:id="txtBrand" layoutX="23.0" layoutY="577.0" promptText="Brand" />
