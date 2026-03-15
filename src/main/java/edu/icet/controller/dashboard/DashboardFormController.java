@@ -38,7 +38,22 @@ public class DashboardFormController {
 
     @FXML
     void btnCustomerOnAction(ActionEvent event) {
+        try {
 
+            URL resource = this.getClass().getResource("/view/Customer.fxml");
+
+            assert resource != null;
+
+            Parent parent = FXMLLoader.load(resource);
+
+
+            dashRoot.getChildren().clear();
+
+            dashRoot.getChildren().add(parent);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
@@ -78,6 +93,22 @@ public class DashboardFormController {
 
     @FXML
     void btnOrdersOnAction(ActionEvent event) {
+        try {
+
+            URL resource = this.getClass().getResource("/view/Order.fxml");
+
+            assert resource != null;
+
+            Parent parent = FXMLLoader.load(resource);
+
+
+            dashRoot.getChildren().clear();
+
+            dashRoot.getChildren().add(parent);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
