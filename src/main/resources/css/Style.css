@@ -1,0 +1,65 @@
+/*
+ * Part 1: Create Global Colors
+ * We define them here so we can change them easily later.
+ */
+.root {
+    /* Define the deep dark background color of the sidebar */
+    -fx-base-dark-bg: #0d1e21; /* Match of the dark navy/charcoal */
+
+    /* Define the striking accent color (Neon Lime) */
+    -fx-accent-color: #d1ff6b; /* Exact match for the active button */
+
+    /* Define text colors */
+    /*-fx-text-light: #ffffff; !* White for standard text *!*/
+    /*-fx-text-dark: #000000;  !* Black for text on the bright background *!*/
+
+    /* Global scene background (optional, for consistency) */
+    -fx-background-color: -fx-base-dark-bg;
+}
+
+/*
+ * Part 2: Styling ALL Buttons to have the default look
+ * This ensures uniformity.
+ */
+.button {
+    -fx-background-color: transparent; /* Makes buttons blend into the sidebar */
+    -fx-text-fill: white;      /* Default white text */
+    -fx-font-family: "Segoe UI Semibold", sans-serif;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20; /* T/R/B/L padding for spacing */
+    -fx-cursor: hand;           /* Change cursor on hover */
+    -fx-background-radius: 12; /* Consistent corner rounding */
+    -fx-border-radius: 12;
+    -fx-border-width: 1px;
+    -fx-border-color: transparent; /* Invisible border by default */
+    -fx-alignment: center-left;   /* Align text/icon to the left */
+}
+
+/*
+ * Part 3: Styling the ACTIVE/SELECTED Button
+ * This creates the specific effect seen on "Customers"
+ */
+.button.active-nav-btn {
+    -fx-background-color: -fx-accent-color; /* The lime-green background */
+    -fx-text-fill: -fx-text-dark;          /* Dark text for visibility */
+
+    /* We can also darken any included icon in this active state */
+    -fx-graphic-text-gap: 12px; /* Set space between icon and text */
+}
+
+/*
+ * Optional: Make icons darken when the button is active
+ * Assumes you are using an ImageView as the button's graphic
+ */
+.button.active-nav-btn .image-view {
+    /*-fx-image: url("@dark_icon_set.png"); !* Replace with your dark icon set if needed *!*/
+    /* Alternatively, you can attempt to use an effect, but replacing the image is cleaner */
+}
+
+/*
+ * Step 4 (Best Practice): Animate the hover effect for elegance
+ */
+.button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.05); /* Subtle white overlay on hover */
+    -fx-border-color: rgba(255, 255, 255, 0.1);    /* Very subtle border on hover */
+}
