@@ -117,5 +117,12 @@ public class SupplierFromController {
 
     }
 
+    public void btnUpdateSupplierOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnDeleteSupplierOnAction(ActionEvent actionEvent) {
+    }
+    public void btnAddNewSupplierOnAction(ActionEvent actionEvent) {
+    }
 }
 

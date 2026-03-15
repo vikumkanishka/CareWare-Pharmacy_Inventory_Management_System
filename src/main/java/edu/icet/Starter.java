@@ -12,6 +12,9 @@ public class Starter extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/DashboardMain.fxml"))));
+        stage.setTitle("CareWare Pharmacy Management System");
+        String cusCss = getClass().getResource("/css/style.css").toExternalForm();
+        stage.getScene().getStylesheets().add(cusCss);
         stage.show();
     }
 }
