@@ -12,7 +12,7 @@ public class MedicineRepositoryImpl implements MedicineRepository {
     @Override
     public void addMedicine(Integer id, String name, String brand, String category, Date expiryDate, Integer quantity, Double unitPrice, Double buyingPrice, Integer supplierId, String batchNumber, Integer reorderLevel, Date createdAt) {
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/careware", "root", "200004602360");
+            Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO medicine VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             preparedStatement.setObject(1, id);
@@ -38,7 +38,7 @@ public class MedicineRepositoryImpl implements MedicineRepository {
     public void updateMedicine(Integer id, String name, String brand, String category, Date expiryDate, Integer quantity, Double unitPrice, Double buyingPrice, Integer supplierId, String batchNumber, Integer reorderLevel, Date createdAt) {
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/careware", "root", "200004602360");
+            Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE medicine SET name=?, brand=?, category=?, expiry_date=?, quantity=?, unit_price=?, buying_price=?, supplier_id=?, batch_number=?, reorder_level=?, created_at=? WHERE medicine_id=?");
             preparedStatement.setObject(1, name);
             preparedStatement.setObject(2, brand);
@@ -62,7 +62,7 @@ public class MedicineRepositoryImpl implements MedicineRepository {
     @Override
     public void deleteMedicine(Integer id) {
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/careware", "root", "200004602360");
+            Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM medicine WHERE medicine_id=?");
             preparedStatement.setObject(1, id);
             preparedStatement.executeUpdate();
@@ -79,7 +79,7 @@ public class MedicineRepositoryImpl implements MedicineRepository {
     @Override
     public ResultSet getAllMedicines() throws SQLException {
 
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/careware", "root", "200004602360");
+            Connection connection = DBConnection.getInstance().getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM medicine");
 
