@@ -15,7 +15,7 @@ public interface MedicineService {
 
     void deleteMedicine(Integer id);
 
-    ArrayList <Medicine> searchMedicineByName(String name);
+    ObservableList <Medicine> searchMedicineByName(String name);
 
     ObservableList<Medicine> getAllMedicines();
 }

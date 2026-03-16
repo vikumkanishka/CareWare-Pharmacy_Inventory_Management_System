@@ -32,7 +32,7 @@ public class MedicineServiceImpl implements MedicineService {
     }
 
     @Override
-    public ArrayList<Medicine> searchMedicineByName(String name) {
+    public ObservableList<Medicine> searchMedicineByName(String name) {
         return null;
     }
 

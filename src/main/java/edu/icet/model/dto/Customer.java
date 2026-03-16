@@ -13,7 +13,7 @@ public class Customer {
     private Integer id;
     private String name;
     private String email;
-    private String phone;
+    private Integer phone;
     private String address;
     private Date createdAt;
 }
