@@ -4,6 +4,7 @@ import edu.icet.model.dto.Medicine;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public interface MedicineRepository {
 
     void deleteMedicine(Integer id);
 
-    Medicine searchMedicineById(Integer id);
+    ArrayList <Medicine> searchMedicineByName(String name);
 
     ResultSet getAllMedicines() throws SQLException;
 }

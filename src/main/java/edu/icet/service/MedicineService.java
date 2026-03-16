@@ -3,6 +3,7 @@ package edu.icet.service;
 import edu.icet.model.dto.Medicine;
 import javafx.collections.ObservableList;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface MedicineService {
 
     void deleteMedicine(Integer id);
 
-    Medicine searchMedicineById(Integer id);
+    ArrayList <Medicine> searchMedicineByName(String name);
 
     ObservableList<Medicine> getAllMedicines();
 }

@@ -123,6 +123,12 @@ public class MedicineFormController implements Initializable {
     }
 
     public void btnDeleteMedicineOnAction(ActionEvent actionEvent) {
+        Integer id = Integer.parseInt(txtId.getText());
+
+        medicineService.deleteMedicine(id);
+
+        loadAllMedicines();
+
     }
 
     @Override

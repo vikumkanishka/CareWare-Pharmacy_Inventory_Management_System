@@ -1,8 +1,10 @@
 package edu.icet.repository.impl;
 
+import edu.icet.db.DBConnection;
 import edu.icet.model.dto.Medicine;
 import edu.icet.repository.MedicineRepository;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -59,11 +61,18 @@ public class MedicineRepositoryImpl implements MedicineRepository {
 
     @Override
     public void deleteMedicine(Integer id) {
-
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/careware", "root", "200004602360");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM medicine WHERE medicine_id=?");
+            preparedStatement.setObject(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public Medicine searchMedicineById(Integer id) {
+    public ArrayList<Medicine> searchMedicineByName(String name) {
         return null;
     }
 

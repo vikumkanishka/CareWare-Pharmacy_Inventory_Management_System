@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class MedicineServiceImpl implements MedicineService {
@@ -27,11 +28,11 @@ public class MedicineServiceImpl implements MedicineService {
 
     @Override
     public void deleteMedicine(Integer id) {
-
+        repository.deleteMedicine(id);
     }
 
     @Override
-    public Medicine searchMedicineById(Integer id) {
+    public ArrayList<Medicine> searchMedicineByName(String name) {
         return null;
     }
 
