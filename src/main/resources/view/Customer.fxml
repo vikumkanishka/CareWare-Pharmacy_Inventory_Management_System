@@ -4,6 +4,8 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -55,7 +57,7 @@
             <Image url="@../img/Search.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="30.0" arcWidth="30.0" height="98.0" layoutX="597.0" layoutY="168.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="285.0">
+      <Rectangle arcHeight="30.0" arcWidth="30.0" height="98.0" layoutX="608.0" layoutY="168.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="286.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -73,7 +75,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Rectangle arcHeight="30.0" arcWidth="30.0" height="98.0" layoutX="597.0" layoutY="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="285.0">
+      <Rectangle arcHeight="30.0" arcWidth="30.0" height="98.0" layoutX="608.0" layoutY="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="286.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -92,25 +94,53 @@
          </fill>
       </Rectangle>
       <JFXTextField fx:id="txtSearch" layoutX="514.0" layoutY="14.0" prefHeight="26.0" prefWidth="138.0" promptText="Search" />
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#e4ebf2" height="138.0" layoutX="6.0" layoutY="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="584.0" />
-      <JFXTextField layoutX="209.0" layoutY="67.0" prefHeight="26.0" prefWidth="178.0" promptText="Name" />
-      <JFXTextField layoutX="14.0" layoutY="67.0" prefHeight="26.0" prefWidth="178.0" promptText="ID" />
-      <JFXTextField layoutX="14.0" layoutY="108.0" prefHeight="26.0" prefWidth="178.0" promptText="Phone" />
-      <JFXTextField layoutX="403.0" layoutY="67.0" prefHeight="26.0" prefWidth="178.0" promptText="Email" />
-      <JFXTextField layoutX="209.0" layoutY="108.0" prefHeight="26.0" prefWidth="178.0" promptText="Adress" />
-      <DatePicker layoutX="402.0" layoutY="111.0" prefHeight="26.0" prefWidth="178.0" />
-      <JFXButton layoutX="14.0" layoutY="156.0" prefHeight="26.0" prefWidth="178.0" text="ADD" />
-      <JFXButton layoutX="209.0" layoutY="157.0" prefHeight="26.0" prefWidth="178.0" text="UPDATE" />
-      <JFXButton layoutX="402.0" layoutY="157.0" prefHeight="26.0" prefWidth="178.0" text="DELETE" />
-      <Label layoutX="714.0" layoutY="56.0" prefHeight="34.0" prefWidth="157.0" text="Total Customers" textAlignment="RIGHT" textFill="WHITE">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#e4ebf2" height="138.0" layoutX="10.0" layoutY="55.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="596.0" />
+      <JFXTextField fx:id="txtCustomerName" layoutX="219.0" layoutY="66.0" prefHeight="26.0" prefWidth="178.0" promptText="Name" />
+      <JFXTextField fx:id="txtCustomerId" layoutX="24.0" layoutY="66.0" prefHeight="26.0" prefWidth="178.0" promptText="ID" />
+      <JFXTextField fx:id="txtPhone" layoutX="24.0" layoutY="107.0" prefHeight="26.0" prefWidth="178.0" promptText="Phone" />
+      <JFXTextField fx:id="txtxCustomerEmail" layoutX="413.0" layoutY="66.0" prefHeight="26.0" prefWidth="178.0" promptText="Email" />
+      <JFXTextField fx:id="txtAddress" layoutX="219.0" layoutY="107.0" prefHeight="26.0" prefWidth="178.0" promptText="Adress" />
+      <DatePicker fx:id="dateCreatedAt" layoutX="412.0" layoutY="110.0" prefHeight="26.0" prefWidth="178.0" />
+      <JFXButton layoutX="24.0" layoutY="155.0" onAction="#btnAddOnAction" prefHeight="26.0" prefWidth="178.0" text="ADD" />
+      <JFXButton layoutX="219.0" layoutY="156.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="178.0" text="UPDATE" />
+      <JFXButton layoutX="412.0" layoutY="156.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="178.0" text="DELETE" />
+      <Label layoutX="672.0" layoutY="60.0" prefHeight="34.0" prefWidth="157.0" text="Total Customers" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="718.0" layoutY="166.0" prefHeight="34.0" prefWidth="157.0" text="New Customers" textAlignment="RIGHT" textFill="WHITE">
+      <Label layoutX="672.0" layoutY="165.0" prefHeight="34.0" prefWidth="157.0" text="New Customers" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
+      <TableView fx:id="tblCustomerDetails" layoutX="7.0" layoutY="209.0" prefHeight="460.0" prefWidth="596.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="25.6000075340271" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="117.5999984741211" text="NAME" />
+            <TableColumn fx:id="colEmail" prefWidth="116.80001831054688" text="EMAIL" />
+            <TableColumn fx:id="colPhone" prefWidth="86.4000244140625" text="PHONE" />
+            <TableColumn fx:id="colAddress" prefWidth="164.00003051757812" text="ADDRESS" />
+            <TableColumn fx:id="colCreatedAt" prefWidth="81.5999755859375" text="CREATED_AT" />
+        </columns>
+      </TableView>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" height="388.0" layoutX="608.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="286.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.09019608050584793" green="0.2549019753932953" blue="0.24313725531101227" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2235294133424759" green="0.6745098233222961" blue="0.2980392277240753" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
    </children>
 </AnchorPane>
