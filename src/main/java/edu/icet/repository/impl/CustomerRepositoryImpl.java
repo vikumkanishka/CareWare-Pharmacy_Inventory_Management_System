@@ -4,6 +4,7 @@ import edu.icet.model.dto.Customer;
 import edu.icet.repository.CustomerRepository;
 import javafx.collections.ObservableList;
 
+import java.sql.ResultSet;
 import java.util.Date;
 
 public class CustomerRepositoryImpl implements CustomerRepository {
@@ -25,12 +26,12 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
-    public ObservableList<Customer> getAllCustomers() {
+    public ResultSet getAllCustomers() {
         return null;
     }
 
     @Override
-    public ObservableList<Customer> searchCustomerByName(String name) {
+    public ResultSet searchCustomerByName(String name) {
         return null;
     }
 }

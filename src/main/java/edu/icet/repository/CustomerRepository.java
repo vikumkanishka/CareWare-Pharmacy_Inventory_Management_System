@@ -3,6 +3,7 @@ package edu.icet.repository;
 import edu.icet.model.dto.Customer;
 import javafx.collections.ObservableList;
 
+import java.sql.ResultSet;
 import java.util.Date;
 
 public interface CustomerRepository {
@@ -13,7 +14,7 @@ public interface CustomerRepository {
 
     void deleteCustomer(Integer id);
 
-    ObservableList<Customer> getAllCustomers();
+    ResultSet getAllCustomers();
 
-    ObservableList<Customer> searchCustomerByName (String name);
+    ResultSet searchCustomerByName (String name);
 }

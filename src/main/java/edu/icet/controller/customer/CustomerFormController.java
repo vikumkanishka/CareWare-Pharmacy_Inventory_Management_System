@@ -3,12 +3,16 @@ package edu.icet.controller.customer;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class CustomerFormController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class CustomerFormController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> colAddress;
@@ -70,4 +74,8 @@ public class CustomerFormController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
