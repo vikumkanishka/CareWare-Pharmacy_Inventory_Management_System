@@ -8,9 +8,9 @@ import java.util.Date;
 
 public interface CustomerRepository {
 
-    void addCustomer(Integer id, String name, String email, Integer phone, String address, Date createdAt);
+    void addCustomer(Integer id, String name, String email, Integer phone, String address);
 
-    void updateCustomer(Integer id, String name, String email, Integer phone, String address, Date createdAt);
+    void updateCustomer(Integer id, String name, String email, Integer phone, String address);
 
     void deleteCustomer(Integer id);
 

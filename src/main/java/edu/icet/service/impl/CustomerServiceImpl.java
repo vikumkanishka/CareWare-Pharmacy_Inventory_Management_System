@@ -16,7 +16,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void addCustomer(Integer id, String name, String email, Integer phone, String address) {
-
+        customerRepository.addCustomer(id, name, email, phone, address);
     }
 
     @Override

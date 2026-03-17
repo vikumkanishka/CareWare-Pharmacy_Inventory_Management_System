@@ -13,12 +13,12 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
 
     @Override
-    public void addCustomer(Integer id, String name, String email, Integer phone, String address, Date createdAt) {
+    public void addCustomer(Integer id, String name, String email, Integer phone, String address) {
 
     }
 
     @Override
-    public void updateCustomer(Integer id, String name, String email, Integer phone, String address, Date createdAt) {
+    public void updateCustomer(Integer id, String name, String email, Integer phone, String address) {
 
     }
 
