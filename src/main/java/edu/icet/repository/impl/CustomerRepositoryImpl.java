@@ -13,8 +13,21 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
 
     @Override
-    public void addCustomer(Integer id, String name, String email, Integer phone, String address) {
+    public void addCustomer(Integer id, String name, String email, String phone, String address) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO customer (customer_id, name, email, phone, address) VALUES (?, ?, ?, ?, ?)");
 
+            preparedStatement.setObject(1, id);
+            preparedStatement.setObject(2, name);
+            preparedStatement.setObject(3, email);
+            preparedStatement.setObject(4, phone);
+            preparedStatement.setObject(5, address);
+
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

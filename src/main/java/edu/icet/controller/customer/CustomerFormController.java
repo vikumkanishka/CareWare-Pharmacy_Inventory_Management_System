@@ -14,6 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -68,14 +69,14 @@ public class CustomerFormController implements Initializable {
     CustomerService customerService = new CustomerServiceImpl();
 
     @FXML
-    void btnAddOnAction(ActionEvent event) {
+    void btnAddOnAction(ActionEvent event) throws SQLException {
         Integer id = Integer.parseInt(txtCustomerId.getText());
         String name = txtCustomerName.getText();
         String email = txtxCustomerEmail.getText();
         String phone = txtPhone.getText();
         String address = txtAddress.getText();
 
-        customerService.addCustomer(id, name, email, Integer.parseInt(phone), address);
+        customerService.addCustomer(id, name, email,phone, address);
         loadtable();
     }
 
