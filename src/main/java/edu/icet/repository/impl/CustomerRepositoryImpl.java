@@ -33,7 +33,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
 
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM customers");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM customer");
 
             return preparedStatement.executeQuery();
 

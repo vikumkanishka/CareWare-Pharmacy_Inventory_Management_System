@@ -41,7 +41,7 @@ public class CustomerServiceImpl implements CustomerService {
                         resultSet.getInt("customer_id"),
                         resultSet.getString("name"),
                         resultSet.getString("email"),
-                        resultSet.getInt("phone"),
+                        resultSet.getString("phone"),
                         resultSet.getString("address"),
                         resultSet.getDate("created_at")
                 ));
