@@ -1,9 +1,6 @@
 package edu.icet.repository.impl;
 
-import edu.icet.model.dto.Customer;
 import edu.icet.repository.CustomerRepository;
-import javafx.collections.ObservableList;
-
 import java.sql.ResultSet;
 import java.util.Date;
 
