@@ -1,7 +1,12 @@
 package edu.icet.repository.impl;
 
+import edu.icet.db.DBConnection;
 import edu.icet.repository.CustomerRepository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 public class CustomerRepositoryImpl implements CustomerRepository {
@@ -24,7 +29,17 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public ResultSet getAllCustomers() {
-        return null;
+
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM customers");
+
+            return preparedStatement.executeQuery();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
