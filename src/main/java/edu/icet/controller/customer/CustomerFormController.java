@@ -15,8 +15,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class CustomerFormController implements Initializable {
@@ -88,7 +86,14 @@ public class CustomerFormController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        Integer id = Integer.parseInt(txtCustomerId.getText());
+        String name = txtCustomerName.getText();
+        String email = txtxCustomerEmail.getText();
+        String phone = txtPhone.getText();
+        String address = txtAddress.getText();
 
+        customerService.updateCustomer(id, name, email, phone, address);
+        loadtable();
     }
 
     @Override

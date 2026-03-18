@@ -20,8 +20,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void updateCustomer(Integer id, String name, String email, Integer phone, String address) {
-
+    public void updateCustomer(Integer id, String name, String email, String phone, String address) {
+        customerRepository.updateCustomer(id, name, email, phone, address);
     }
 
     @Override

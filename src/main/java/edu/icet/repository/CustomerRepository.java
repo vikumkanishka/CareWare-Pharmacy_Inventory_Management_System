@@ -11,7 +11,7 @@ public interface CustomerRepository {
 
     void addCustomer(Integer id, String name, String email, String phone, String address);
 
-    void updateCustomer(Integer id, String name, String email, Integer phone, String address);
+    void updateCustomer(Integer id, String name, String email, String phone, String address);
 
     void deleteCustomer(Integer id);
 
