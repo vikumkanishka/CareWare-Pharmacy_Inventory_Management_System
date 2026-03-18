@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.icet.controller.pos.PosFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="678.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.pos.PosFormController">
+   <children>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" height="45.0" layoutX="16.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="888.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.2500000009031007">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.09019608050584793" green="0.2549019753932953" blue="0.24313725531101227" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2235294133424759" green="0.6745098233222961" blue="0.2980392277240753" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="24.0" layoutY="17.0" prefHeight="45.0" prefWidth="163.0" text="Customers" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="SansSerif Bold" size="28.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="34.0" layoutX="784.0" layoutY="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="108.0" />
+      <Label fx:id="lblRole" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="822.0" layoutY="28.0" prefHeight="22.0" prefWidth="53.0" text="Admin">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="22.0" fitWidth="16.0" layoutX="802.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/user.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="34.0" layoutX="495.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="178.0" />
+      <ImageView fitHeight="22.0" fitWidth="16.0" layoutX="504.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Search.png" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>
