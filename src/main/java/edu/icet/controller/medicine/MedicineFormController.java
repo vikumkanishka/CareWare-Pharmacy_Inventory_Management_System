@@ -131,6 +131,10 @@ public class MedicineFormController implements Initializable {
 
     }
 
+    public void btnClearMedicineOnAction(ActionEvent actionEvent) {
+        clearFields();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -152,4 +156,18 @@ public class MedicineFormController implements Initializable {
     void loadAllMedicines() {
         tblMedicineDetails.setItems(medicineService.getAllMedicines());
     }
+
+    void clearFields(){
+        txtId.clear();
+        txtName.clear();
+        txtBrand.clear();
+        txtCategory.clear();
+        txtSupplierId.clear();
+        txtQuantity.clear();
+        txtUnitPrice.clear();
+        txtBuyingPrice.clear();
+        txtReOrderLevel.clear();
+        txtBatchNo.clear();
+    }
+
 }
