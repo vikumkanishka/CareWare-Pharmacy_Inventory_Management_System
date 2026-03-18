@@ -111,4 +111,12 @@ public class CustomerFormController implements Initializable {
     private void loadtable() {
         tblCustomerDetails.setItems(customerService.getAllCustomers());
     }
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+        txtCustomerId.clear();
+        txtCustomerName.clear();
+        txtxCustomerEmail.clear();
+        txtPhone.clear();
+        txtAddress.clear();
+    }
 }

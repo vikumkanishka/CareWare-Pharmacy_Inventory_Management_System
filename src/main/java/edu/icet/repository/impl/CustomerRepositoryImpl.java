@@ -1,6 +1,5 @@
 package edu.icet.repository.impl;
 
-import com.mysql.cj.xdevapi.UpdateResult;
 import edu.icet.db.DBConnection;
 import edu.icet.repository.CustomerRepository;
 
