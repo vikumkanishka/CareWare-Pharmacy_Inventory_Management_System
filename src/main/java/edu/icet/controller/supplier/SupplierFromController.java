@@ -3,41 +3,23 @@ package edu.icet.controller.supplier;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 
 public class SupplierFromController {
 
     @FXML
-    private Button btnAddNewMedicine;
+    private TableColumn<?, ?> colAddress;
 
     @FXML
-    private Button btnDeleteMedicine;
-
-    @FXML
-    private Button btnUpdateMedicine;
-
-    @FXML
-    private TableColumn<?, ?> colBatchNumber;
-
-    @FXML
-    private TableColumn<?, ?> colBrand;
-
-    @FXML
-    private TableColumn<?, ?> colBuyingPrice;
-
-    @FXML
-    private TableColumn<?, ?> colCategory;
+    private TableColumn<?, ?> colCompanyName;
 
     @FXML
     private TableColumn<?, ?> colCreatedAt;
 
     @FXML
-    private TableColumn<?, ?> colExpiryDate;
+    private TableColumn<?, ?> colEmail;
 
     @FXML
     private TableColumn<?, ?> colId;
@@ -46,22 +28,7 @@ public class SupplierFromController {
     private TableColumn<?, ?> colName;
 
     @FXML
-    private TableColumn<?, ?> colQuantity;
-
-    @FXML
-    private TableColumn<?, ?> colReOrderLevel;
-
-    @FXML
-    private TableColumn<?, ?> colSupplierID;
-
-    @FXML
-    private TableColumn<?, ?> colUnitPrice;
-
-    @FXML
-    private DatePicker dateCreatedAt;
-
-    @FXML
-    private DatePicker dateExpiryDate;
+    private TableColumn<?, ?> colPhone;
 
     @FXML
     private Label lblRole;
@@ -70,59 +37,44 @@ public class SupplierFromController {
     private TableView<?> tblSupplierDetails;
 
     @FXML
-    private TextField txtBatchNo;
+    private JFXTextField txtAddress;
 
     @FXML
-    private TextField txtBrand;
+    private JFXTextField txtCompanyName;
 
     @FXML
-    private TextField txtBuyingPrice;
+    private JFXTextField txtEmail;
 
     @FXML
-    private TextField txtCategory;
+    private JFXTextField txtId;
 
     @FXML
-    private TextField txtId;
+    private JFXTextField txtName;
 
     @FXML
-    private TextField txtName;
-
-    @FXML
-    private TextField txtQuantity;
-
-    @FXML
-    private TextField txtReOrderLevel;
+    private JFXTextField txtPhone;
 
     @FXML
     private JFXTextField txtSearch;
 
     @FXML
-    private TextField txtSupplierId;
-
-    @FXML
-    private TextField txtUnitPrice;
-
-    @FXML
-    void btnAddNewMedicineOnAction(ActionEvent event) {
+    void btnAddOnAction(ActionEvent event) {
 
     }
 
     @FXML
-    void btnDeleteMedicineOnAction(ActionEvent event) {
+    void btnClearOnAction(ActionEvent event) {
 
     }
 
     @FXML
-    void btnUpdateMedicineOnAction(ActionEvent event) {
+    void btnDeleteOnAction(ActionEvent event) {
 
     }
 
-    public void btnUpdateSupplierOnAction(ActionEvent actionEvent) {
+    @FXML
+    void btnUpdateOnAction(ActionEvent event) {
+
     }
 
-    public void btnDeleteSupplierOnAction(ActionEvent actionEvent) {
-    }
-    public void btnAddNewSupplierOnAction(ActionEvent actionEvent) {
-    }
 }
-
