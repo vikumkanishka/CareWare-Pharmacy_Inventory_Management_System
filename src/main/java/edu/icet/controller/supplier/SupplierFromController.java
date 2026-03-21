@@ -74,7 +74,7 @@ public class SupplierFromController implements Initializable {
         String email = txtEmail.getText();
         String address = txtAddress.getText();
 
-
+        supplierService.addSupplier(id, name, companyName, email, phone, address);
     }
 
     @FXML
@@ -89,11 +89,19 @@ public class SupplierFromController implements Initializable {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        supplierService.deleteSupplier(Integer.valueOf(txtId.getText()));
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        Integer id = Integer.valueOf(txtId.getText());
+        String name = txtName.getText();
+        String companyName = txtCompanyName.getText();
+        String phone = txtPhone.getText();
+        String email = txtEmail.getText();
+        String address = txtAddress.getText();
+
+        supplierService.updateSupplier(id, name, companyName, email, phone, address);
 
     }
 
