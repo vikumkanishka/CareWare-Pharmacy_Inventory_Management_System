@@ -113,11 +113,6 @@ public class DashboardFormController {
     }
 
     @FXML
-    void btnPOSOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
     void btnSupplierOnAction(ActionEvent event) {
         try {
 
@@ -138,5 +133,21 @@ public class DashboardFormController {
     }
 
     public void btnSalesOnAction(ActionEvent actionEvent) {
+        try {
+
+            URL resource = this.getClass().getResource("/view/Sales.fxml");
+
+            assert resource != null;
+
+            Parent parent = FXMLLoader.load(resource);
+
+
+            dashRoot.getChildren().clear();
+
+            dashRoot.getChildren().add(parent);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
