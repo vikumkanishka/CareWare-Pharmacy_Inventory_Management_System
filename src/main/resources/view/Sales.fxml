@@ -1,10 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.icet.controller.sales.SalesFormController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.sales.SalesFormController">
+   <children>
+      <!-- Header -->
+      <Rectangle arcHeight="30.0" arcWidth="30.0" height="45.0" layoutX="6.0" layoutY="7.0" strokeType="INSIDE" strokeWidth="0.0" width="888.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.25">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.0901960805" green="0.2549019754" blue="0.2431372553" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2235294133" green="0.6745098233" blue="0.2980392277" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="14.0" layoutY="7.0" prefHeight="45.0" prefWidth="220.0" text="Sales / POS" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="SansSerif Bold" size="28.0" />
+         </font>
+      </Label>
 
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="34.0" layoutX="774.0" layoutY="12.0" strokeType="INSIDE" strokeWidth="0.0" width="108.0" />
+      <Label fx:id="lblRole" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="812.0" layoutY="18.0" prefHeight="22.0" prefWidth="53.0" text="Admin">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="22.0" fitWidth="16.0" layoutX="792.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/user.png" />
+         </image>
+      </ImageView>
+
+      <!-- Main background cards -->
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#e4ebf2" height="614.0" layoutX="6.0" layoutY="59.0" strokeType="INSIDE" strokeWidth="0.0" width="888.0" />
+
+      <!-- Left: cart -->
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="596.0" layoutX="14.0" layoutY="68.0" strokeType="INSIDE" strokeWidth="0.0" width="560.0" />
+      <Label layoutX="28.0" layoutY="78.0" prefHeight="26.0" prefWidth="214.0" text="Current Cart">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+
+      <TableView fx:id="tblCart" layoutX="24.0" layoutY="114.0" prefHeight="470.0" prefWidth="540.0">
+         <columns>
+            <TableColumn fx:id="colMedicineId" prefWidth="85.0" text="Medicine ID" />
+            <TableColumn fx:id="colMedicineName" prefWidth="160.0" text="Medicine" />
+            <TableColumn fx:id="colQty" prefWidth="60.0" text="Qty" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="95.0" text="Unit Price" />
+            <TableColumn fx:id="colSubTotal" prefWidth="110.0" text="Subtotal" />
+         </columns>
+      </TableView>
+
+      <Button layoutX="24.0" layoutY="596.0" mnemonicParsing="false" onAction="#btnRemoveSelectedOnAction" prefHeight="30.0" prefWidth="150.0" text="Remove Selected" />
+      <Button layoutX="184.0" layoutY="596.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="30.0" prefWidth="120.0" text="Clear" />
+
+      <!-- Right: entry + totals -->
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="596.0" layoutX="584.0" layoutY="68.0" strokeType="INSIDE" strokeWidth="0.0" width="300.0" />
+
+      <!-- Sale info -->
+      <Label layoutX="596.0" layoutY="78.0" prefHeight="22.0" prefWidth="120.0" text="Sale Info">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+
+      <Label layoutX="596.0" layoutY="112.0" text="Customer Name" />
+      <TextField fx:id="txtCustomerName" layoutX="596.0" layoutY="130.0" prefHeight="26.0" prefWidth="276.0" promptText="Type existing/new customer name" />
+
+      <Label layoutX="596.0" layoutY="162.0" text="Customer ID (optional)" />
+      <TextField fx:id="txtCustomerId" layoutX="596.0" layoutY="180.0" prefHeight="26.0" prefWidth="276.0" promptText="Customer ID (optional)" />
+
+      <Label layoutX="596.0" layoutY="212.0" text="Payment Method" />
+      <ComboBox fx:id="cmbPaymentMethod" layoutX="596.0" layoutY="230.0" prefHeight="26.0" prefWidth="276.0" promptText="Select payment method" />
+
+      <!-- Item entry -->
+      <Label layoutX="596.0" layoutY="270.0" prefHeight="22.0" prefWidth="160.0" text="Add Item">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+
+      <Label layoutX="596.0" layoutY="302.0" text="Medicine (ID or Name)" />
+      <TextField fx:id="txtMedicineSearch" layoutX="596.0" layoutY="320.0" prefHeight="26.0" prefWidth="276.0" onAction="#txtMedicineSearchOnAction" promptText="e.g. 101 or Panadol" />
+
+      <Label layoutX="596.0" layoutY="352.0" text="Selected Medicine" />
+      <Label fx:id="lblMedicineName" layoutX="596.0" layoutY="370.0" prefHeight="18.0" prefWidth="276.0" text="-" />
+
+      <Label layoutX="596.0" layoutY="394.0" text="Available Qty" />
+      <Label fx:id="lblAvailableQty" layoutX="596.0" layoutY="412.0" prefHeight="18.0" prefWidth="276.0" text="-" />
+
+      <Label layoutX="596.0" layoutY="436.0" text="Unit Price" />
+      <TextField fx:id="txtUnitPrice" layoutX="596.0" layoutY="454.0" prefHeight="26.0" prefWidth="276.0" promptText="Auto-filled" />
+
+      <Label layoutX="596.0" layoutY="486.0" text="Quantity" />
+      <TextField fx:id="txtQty" layoutX="596.0" layoutY="504.0" prefHeight="26.0" prefWidth="276.0" promptText="Quantity" />
+
+      <Button layoutX="596.0" layoutY="540.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="30.0" prefWidth="276.0" text="Add To Cart" />
+
+      <!-- Totals -->
+      <Label layoutX="596.0" layoutY="554.0" prefHeight="22.0" prefWidth="100.0" text="Totals">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+
+      <Label layoutX="596.0" layoutY="582.0" text="Total" />
+      <Label fx:id="lblTotalAmount" alignment="CENTER_RIGHT" layoutX="726.0" layoutY="582.0" prefHeight="18.0" prefWidth="146.0" text="0.00" />
+
+      <Label layoutX="596.0" layoutY="606.0" text="Discount" />
+      <TextField fx:id="txtDiscount" layoutX="726.0" layoutY="602.0" prefHeight="26.0" prefWidth="146.0" promptText="0.00" />
+
+      <Label layoutX="596.0" layoutY="638.0" text="Final" />
+      <Label fx:id="lblFinalAmount" alignment="CENTER_RIGHT" layoutX="726.0" layoutY="638.0" prefHeight="18.0" prefWidth="146.0" text="0.00" />
+
+      <Button layoutX="596.0" layoutY="632.0" mnemonicParsing="false" onAction="#btnCheckoutOnAction" prefHeight="30.0" prefWidth="276.0" text="Checkout / Save Sale" />
+
+   </children>
 </AnchorPane>
